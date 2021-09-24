@@ -15,7 +15,7 @@ export const Content = styled.div`
     margin: 150px auto;
     
     h1{
-        text-shadow: 0px 4px 4px rgba(0,0,0, 0.25);
+        text-shadow: 0px 6px 6px rgba(0,0,0, 0.25);
         font-size: 3.5rem;
         color: var(--white);
         
@@ -44,7 +44,7 @@ export const Content = styled.div`
         }
 
  @media (min-width: 768px) {
-    margin-left: 180px;
+    margin-left: 160px;
  }
 `
 
@@ -52,7 +52,7 @@ export const ImageHome = styled.img`
    width: 100%;
    height: 100vh;
   
-@media (min-width: 768px) {
+@media (min-width:1100px) {
     width: 55%;
 }
     

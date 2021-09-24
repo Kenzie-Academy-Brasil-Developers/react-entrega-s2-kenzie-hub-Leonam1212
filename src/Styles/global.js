@@ -9,6 +9,7 @@ export default createGlobalStyle`
     }
 
     :root {
+        --whiteCity: #dfe6e9;
         --white: #f5f5f5;
         --black: #0c0d0d;
         --red: #c53030;
