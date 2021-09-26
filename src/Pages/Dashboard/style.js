@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   div:first-child {
     display: flex;
-
+    justify-content: space-between;
     text-align: center;
     li:first-child {
       font-size: 30px;
