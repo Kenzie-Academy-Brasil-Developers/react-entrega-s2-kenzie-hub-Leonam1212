@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../../Components/Button";
 import { toast } from "react-toastify";
 import api from "../../Services/api";
-const Login = ({ authenticated }) => {
+const Login = ({ authenticated, setAuthenticated }) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -35,6 +35,7 @@ const Login = ({ authenticated }) => {
         console.log(response.data);
         localStorage.setItem("@KenzieHub:token", JSON.stringify(token));
         localStorage.setItem("@KenzieHub:user", JSON.stringify(user.id));
+        setAuthenticated(true)
         return history.push("/dashboard");
       })
       .catch((err) => toast.error("Email ou Senha invalidos"));
