@@ -2,15 +2,14 @@ import { useHistory, Redirect } from "react-router-dom";
 import { Container, Content, ImageHome } from "./style";
 import Button from "../../Components/Button/";
 const Home = ({ authenticated }) => {
-
-  const history = useHistory()
+  const history = useHistory();
   const handleNavigation = (path) => {
-      return history.push(path)
-  }  
+    return history.push(path);
+  };
 
-//   if(authenticated) {
-//       return <Redirect to = "dashboard" />
-//   }
+  if (authenticated) {
+    return <Redirect to="dashboard" />;
+  }
   return (
     <Container>
       <Content>
@@ -19,8 +18,12 @@ const Home = ({ authenticated }) => {
         </h1>
         <span>Junte-se a essa incrível comunidade!!</span>
         <div>
-          <Button onClick ={()=> handleNavigation("/signup")}>Cadastre-se</Button>
-          <Button onClick ={()=> handleNavigation("/login")} blackSchema>Login</Button>
+          <Button onClick={() => handleNavigation("/signup")}>
+            Cadastre-se
+          </Button>
+          <Button onClick={() => handleNavigation("/login")} blackSchema>
+            Login
+          </Button>
         </div>
       </Content>
 

@@ -62,7 +62,6 @@ const Signup = ({ authenticated }) => {
       });
   };
 
- 
   if (authenticated) {
     return <Redirect to="dashboard" />;
   }
@@ -107,7 +106,7 @@ const Signup = ({ authenticated }) => {
                 variant="outlined"
                 size="small"
                 color="primary"
-                type=""
+                type="password"
                 {...register("password")}
                 error={!!errors.password}
                 helperText={errors.password?.message}
@@ -119,6 +118,7 @@ const Signup = ({ authenticated }) => {
                 margin="normal"
                 variant="outlined"
                 size="small"
+                type="password"
                 color="primary"
                 {...register("confirmPassword")}
                 error={!!errors.confirmPassword}

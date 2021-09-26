@@ -31,8 +31,10 @@ const Login = ({ authenticated }) => {
     api
       .post("/sessions", data)
       .then((response) => {
-        const { token } = response.data;
+        const { token, user } = response.data;
+        console.log(response.data);
         localStorage.setItem("@KenzieHub:token", JSON.stringify(token));
+        localStorage.setItem("@KenzieHub:user", JSON.stringify(user.id));
         return history.push("/dashboard");
       })
       .catch((err) => toast.error("Email ou Senha invalidos"));
@@ -68,6 +70,7 @@ const Login = ({ authenticated }) => {
                 variant="outlined"
                 size="medium"
                 color="primary"
+                type="password"
                 {...register("password")}
                 error={!!errors.password}
                 helperText={errors.password?.message}
